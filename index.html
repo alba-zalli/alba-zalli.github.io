@@ -1,28 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Alba's Website</title>
-	<!--Meta Tags -->
-	<!-- Primary Meta Tags -->
-	<title>Alba Zalli – Portfolio</title>
-	<meta name="title" content="Alba Zalli – Portfolio">
-	<meta name="description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
-	
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://alba-zalli.github.io/">
-	<meta property="og:title" content="Alba Zalli – Portfolio">
-	<meta property="og:description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
-	<meta property="og:image" content="https://alba-zalli.github.io/images/alba.png"> <!-- Must be full URL -->
-	
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://alba-zalli.github.io/">
-	<meta property="twitter:title" content="Alba Zalli – Portfolio">
-	<meta property="twitter:description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
-	<meta property="twitter:image" content="https://alba-zalli.github.io/images/alba.png">
+    <title>Alba Zalli | Software Developer</title>
+    <!--Coding languages stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!--Meta Tags -->
+    <!-- Primary Meta Tags -->
+    <title>Alba Zalli – Portfolio</title>
+    <meta name="title" content="Alba Zalli – Portfolio">
+    <meta name="description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
 
-	
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alba-zalli.github.io/">
+    <meta property="og:title" content="Alba Zalli – Portfolio">
+    <meta property="og:description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
+    <meta property="og:image" content="https://alba-zalli.github.io/images/alba.png"> <!-- Must be full URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alba-zalli.github.io/">
+    <meta property="twitter:title" content="Alba Zalli – Portfolio">
+    <meta property="twitter:description" content="Welcome to my personal website! I'm a CS student, musician, and writer. Check out my projects, awards, and more.">
+    <meta property="twitter:image" content="https://alba-zalli.github.io/images/alba.png">
+
+
     <link href="images/favicon.png?v=2" rel="icon" type="image/png">
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
@@ -38,24 +40,43 @@
 
     <!-- Header -->
     <header class="alt" id="header">
-        <img alt="Header image" class="header-image" src="images/header.png"/>
-        <div class="polaroid-container">
-            <div class="polaroid-flip" id="polaroidCard">
-                <div class="polaroid front">
-                    <img alt="Alba Zalli" src="images/alba.jpeg"/>
-                    <div class="caption">Alba's Website</div>
-                </div>
-                <div class="polaroid back">
-                    <div class="scribbles"><br>Welcome to my website.</div>
-                    <div class="smallertext">I'm looking forward to seeing where University takes me. I'm currently
-                        enjoying the bands Car Seat Headrest, Geese, and Of Montreal. <br></div>
-                    <img src="images/footer.png"/>
+        <div class="header-content">
+            <div class="polaroid-container">
+                <div class="polaroid-flip" id="polaroidCard">
+                    <div class="polaroid front">
+                        <img alt="Alba Zalli" src="images/alba.jpeg"/>
+                        <div class="caption">Seeking summer 2026 coop </div>
+                    </div>
+                    <div class="polaroid back">
+                        <div class="scribbles"><br>Welcome to my website.</div>
+                        <div class="smallertext">
+                            I'm looking forward to seeing where University takes me.
+                            I'm currently enjoying the bands Car Seat Headrest, Geese, and Of Montreal. <br>
+                        </div>
+                        <img src="images/footer.png"/>
+                    </div>
                 </div>
             </div>
-        </div>
-        <img alt="Header image" class="header-image2" src="images/header.png"/>
-    </header>
 
+            <div class="title-block">
+                <h7>Alba Zalli</h7>
+                <h8>Computer Science Student @ University of Waterloo</h8>
+                <ul class="icons">
+                    <li><a class="icon brands fa-github alt" href="https://github.com/alba-zalli"><span class="label">GitHub</span></a></li>
+                    <li><a class="icon brands fa-linkedin alt" href="https://www.linkedin.com/in/alba-zalli/"><span class="label">Linkedin</span></a></li>
+                    <li><a class="icon solid fa-envelope alt" href="mailto:azalli@uwaterloo.ca"><span class="label">Email</span></a></li>
+                </ul>
+                <h9>I'm Alba (he/him). I'm a first year student at UWaterloo.
+                    I love writing, drawing, coding, making and listening to music.
+                    I can usually be found daydreaming about my newest project,
+                    thinking about fractals, or jamming with friends.</h9>
+            </div>
+        </div>
+    </header>
+    <br>
+
+
+    <!-- Flip the card -->
     <script>
   const card = document.getElementById('polaroidCard');
   card.addEventListener('click', () => {
@@ -67,80 +88,80 @@
     <!-- Nav -->
     <nav id="nav">
         <ul>
-            <li><a class="active" href="#intro">Project Spotlight</a></li>
+            <li><a href="#intro">Projects</a></li>
             <li><a href="#first">Extracurriculars</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#second">Awards</a></li>
         </ul>
     </nav>
 
+    <script>
+    window.addEventListener('scroll', () => {
+        const polaroid = document.querySelector('.polaroid');
+        if (!polaroid) return;
+
+        // Keep transform only for positioning (no scaling)
+        polaroid.style.transform = 'scale(1)';
+    });
+
+    // On load, set to its natural size
+    window.addEventListener('load', () => {
+        const polaroid = document.querySelector('.polaroid');
+        if (polaroid) {
+            polaroid.style.transform = 'scale(1)';
+        }
+    });
+    </script>
+
+
     <!-- Main -->
     <div id="main">
-
-        <!-- Introduction -->
-        <section class="main" id="intro">
-            <div class="spotlight">
-                <div class="content">
-                    <header class="major">
-                        <h2>Audioscope</h2>
-                    </header>
-                    <p>Audioscope creates a visual and audio representation of sound waves, allowing the user to
-                        manually add frequencies or choose a chord preset that allows multiple harmonious frequencies to
-                        be displayed at the same time. This program provides an effective way for
-                        students to understand how sound waves interact.</p>
-                    <ul class="actions">
-                        <li><a class="button" href="assets/Audioscope.zip">Download as ZIP</a></li>
-                        <li><a class="button" href="assets/Audioscope Manual.docx">Download Instructions</a></li>
-			<ul class="icons">
-                <li><a class="icon brands fa-github alt" href="https://github.com/alba-zalli/Audioscope"><span
-                        class="label">GitHub</span></a></li>
-                    </ul>
-                </div>
-                <img src="images/projectscreenshot.jpg" style="margin-left: 40px; border: 2%;" width="50%"/>
-            </div>
-        </section>
-
-        <!-- First Section -->
-        <section class="main special" id="first">
+        <!-- Projects Section -->
+        <section class="main special" id="intro">
             <header class="major">
-                <h2>Extracurriculars</h2>
+                <h2><br>Projects</h2>
             </header>
 
-            <script>
-            window.addEventListener('scroll', () => {
-                const polaroid = document.querySelector('.polaroid');
-                if (!polaroid) return;
+            <div class="project">
+                <div class="project-details">
+                    <p class="project-date">June, 2025</p>
+                    <div class="project-header">
+                        <h3 class="project-title">Audioscope</h3>
+                        <a href="https://github.com/alba-zalli/Audioscope" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Github
+                        </a>
+                    </div>
+                    <p class="project-desc">Audioscope provides both a visual and audio representation of inputted frequencies.</p>
+                    <div class="project-tech">
+                        <i class="devicon-java-plain"></i>
+                    </div>
+                </div>
+            </div>
 
-                const scrollY = window.scrollY;
-
-                // Define scroll range and scale range
-                const startScroll = 0;
-                const endScroll = 200; // adjust this to control when it stops shrinking
-                const maxScale = 1.2;
-                const minScale = 1;
-
-                // Clamp scrollY within the scroll range
-                const clampedScroll = Math.min(Math.max(scrollY, startScroll), endScroll);
-
-                // Calculate scale based on scroll position
-                const scale = maxScale - ((clampedScroll - startScroll) / (endScroll - startScroll)) * (maxScale - minScale);
-
-                // Apply scale
-                polaroid.style.transform = `scale(${scale})`;
-            });
-
-            // Optional: Set initial scale on load
-            window.addEventListener('load', () => {
-                const polaroid = document.querySelector('.polaroid');
-                if (polaroid) {
-                    polaroid.style.transform = `scale(1.2)`;
-                }
-            });
+            <div class="project">
+                <div class="project-details">
+                    <p class="project-date">August, 2025</p>
+                    <div class="project-header">
+                        <h3 class="project-title">Personal Website</h3>
+                        <a href="https://github.com/alba-zalli/alba-zalli.github.io" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                    <p class="project-desc">You're on it right now!</p>
+                    <div class="project-tech">
+                        <i class="devicon-html5-plain"></i>
+                        <i class="devicon-css3-plain"></i>
+                        <i class="devicon-javascript-plain"></i>
+                    </div>
+                </div>
+            </div>
 
 
-            </script>
 
-
+    <!-- First Section -->
+        <section class="main special" id="first">
+            <header class="major">
+                <h2><br>Extracurriculars</h2>
+            </header>
             <div class="carousel-container">
                 <div class="carousel-fade left"></div>
                 <div class="carousel-fade right"></div>
@@ -334,59 +355,12 @@
 
         </section>
 
-        <!-- Skills -->
-        <section class="main special" id="skills">
-            <header class="major">
-                <h2>Skills</h2>
-            </header>
 
-            <div style="display: flex; justify-content: center;">
-                <div style="
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 8em; /* Increased gap here */
-		max-width: 1000px;
-		text-align: left;">
-
-                    <div>
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>English</li>
-                            <li>French (B2 DELF Certified)</li>
-                            <li>Albanian</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3>Coding Languages</h3>
-                        <ul>
-                            <li>HTML/CSS</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>Java</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3>Soft Skills</h3>
-                        <ul>
-                            <li>Leadership</li>
-                            <li>Public speaking</li>
-                            <li>Collaboration</li>
-                            <li>Problem solving</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
+        <br><br>
         <!-- Second Section -->
         <section class="main special" id="second">
             <header class="major">
-                <h2>Awards</h2>
-                <p>Things I've won over the years</p>
+                <h2><br>Awards</h2>
             </header>
 
             <div class="accordion">
@@ -575,41 +549,27 @@
 
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1em;">
+        <p class="copyright">&copy; Alba Zalli. Made with <3. Design:
+            <a href="https://html5up.net">HTML5 UP</a>.
+        </p>
+
         <section>
-            <h2>About me</h2>
-            <p>I'm Alba (he/him). I'm a first year student at Waterloo for Computer Science. I love writing, drawing,
-                coding, making and listening to music. I can usually be found daydreaming about my newest project,
-                thinking about fractals, or jamming with friends.</p>
+            <div class="icons"
+                 style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <a href="https://cs.uwatering.com/#alba-zalli.github.io?nav=prev">←</a>
+                <a href="https://cs.uwatering.com/#alba-zalli.github.io" target="_blank">
+                    <img src="https://cs.uwatering.com/icon.white.svg"
+                         alt="CS Webring"
+                         style="width: 24px; height: auto; opacity: 0.8;"/>
+                </a>
+                <a href="https://cs.uwatering.com/#alba-zalli.github.io?nav=next">→</a>
+            </div>
         </section>
-        <section>
-            <h2>Contact me</h2>
-            <dl class="alt">
-                <dt>Email</dt>
-                <dd><a href="#">azalli@uwaterloo.ca</a></dd>
-            </dl>
-            <ul class="icons">
-                <li><a class="icon brands fa-github alt" href="https://github.com/alba-zalli"><span
-                        class="label">GitHub</span></a></li>
-                <li><a class="icon brands fa-linkedin alt" href="https://www.linkedin.com/in/alba-zalli/"><span
-                        class="label">Linkedin</span></a></li>
-                <li><a class="icon brands fa-discord alt" href="https://discord.com/users/.computerangel."><span
-                        class="label">Linkedin</span></a></li>
-		   
-		<li><div class="icons" style="display: flex; align-items: center; gap: 8px;">		    
-		    <a href="https://cs.uwatering.com/#alba-zalli.github.io?nav=prev">←</a>
-		    <a href="https://cs.uwatering.com/#alba-zalli.github.io" target="_blank">
-	        <img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
-	    </a> <a href="https://cs.uwatering.com/#alba-zalli.github.io?nav=next">→</a> </div> </li>
-            </ul>
-        </section>
-        <p class="copyright">&copy; Alba Zalli. Made with <3. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-        <img alt="Medieval footer" class="copyright" src="images/footer.png" style="display: block;
-            margin: -5em auto;
-            max-width: 500px;
-            height: auto;"/>
     </footer>
-</div>
+
+
+
 
 
 <!-- Scripts -->
