@@ -2,6 +2,8 @@
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 @import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap';
+
 
 /*
 	Stellar by HTML5 UP
@@ -134,6 +136,16 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+/* Title block*/
+.title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;       /* text/icons stay aligned */
+    margin-left: 20em;             /* move horizontally */
+    margin-top: -20em;             /* move vertically without overflow */
+    max-width: calc(100% - 20em);  /* prevents horizontal overflow */
+}
+
 /* Type */
 
 	body {
@@ -229,7 +241,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 3em;
 	}
 
 	h3 {
@@ -247,6 +259,38 @@ input, select, textarea {
 	h6 {
 		font-size: 0.7em;
 	}
+
+	h7 {
+        margin: 0;
+        letter-spacing: -0.025em;
+        font-family: 'Nova Cut', sans-serif;
+        font-size: 5em;
+        line-height: 1;
+        align-self: flex-start;
+        position: relative;
+	}
+
+	h8{
+	    line-height: 3;
+	    margin: 0;
+        font-size: 1.5em;
+        position: relative;
+	}
+
+    h9 {
+        display: block;
+        max-width: 31em;
+        font-size: 1em;
+        line-height: 1.5;
+        margin-top: -1em;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        text-align: left;
+    }
+
+
+
 
 	@media screen and (max-width: 736px) {
 
@@ -3098,6 +3142,10 @@ input, select, textarea {
 			margin: 0 0 0.25em 0;
 		}
 
+		#header h2 {
+        	margin: 0 0 0.25em 0;
+        }
+
 		#header p {
 			font-size: 1.25em;
 			letter-spacing: -0.025em;
@@ -3722,7 +3770,7 @@ input, select, textarea {
 
 		#footer .copyright {
 			width: 100%;
-			margin: 2.5em 0 2em 0;
+			margin: 1em 0 2em 0;
 			font-size: 0.8em;
 			color: white;
 			text-align: center;
@@ -3808,19 +3856,19 @@ input, select, textarea {
 
 		}
 /*Polaroid*/
-/* Center the container at top */
+/* Left align the container */
 .polaroid-container {
   position: relative;
   perspective: 1000px;
-  width: 260px;
-  height: 340px;
-  margin: 2em auto 0 auto; /* top, horizontal center */
+  width: 312px;
+  height: 408px;
+  margin: 0 0 0 -2em; /* top, horizontal center */
 }
 
 /* Flip wrapper */
 .polaroid-flip {
-  width: 100%;
-  height: 100%;
+  width: 312px;
+  height: 408px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
@@ -3836,11 +3884,12 @@ input, select, textarea {
 /* Faces */
 .polaroid.front{
     will-change: transform;
-    transform: rotateY(180deg) scale(1.2);
+    scale: (1);
+    transform: rotateY(180deg);
     transition: transform 0.3s ease;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 312px;
+    height: 408px;
     background: white;
     padding: 10px 10px 30px 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -3855,11 +3904,11 @@ input, select, textarea {
 }
 
 .polaroid.back{
-  transform: rotateY(180deg) scale(1.2);
+  transform: rotateY(180deg);
   transition: transform 0.3s ease;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 312px;
+  height: 408px;
   background: white;
   padding: 10px 10px 30px 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -3913,19 +3962,24 @@ input, select, textarea {
   margin-bottom: 0.5em;
 }
 
-/* Nudge animation on hover */
+/* 3D Tilt animation on hover */
+.polaroid.front {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
 .polaroid.front:hover {
-  animation: shake 0.3s ease-in;
+  animation: tilt 0.5s ease-in-out;
 }
 
-
-@keyframes shake {
-  0% { transform: scale(1.2) translateX(0); }
-  25% { transform: scale(1.2) translateX(-3px); }
-  50% { transform: scale(1.2) translateX(3px); }
-  75% { transform: scale(1.2) translateX(-1px); }
-  100% { transform: scale(1.2) translateX(0); }
+@keyframes tilt {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  25%  { transform: rotateX(-5deg) rotateY(5deg); }
+  50%  { transform: rotateX(8deg) rotateY(6deg); }
+  75%  { transform: rotateX(4deg) rotateY(3deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg); }
 }
+
 
 .polaroid {
 display: inline-block;
@@ -3998,87 +4052,85 @@ margin: 0 0.5em;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 word-wrap: break-word;
 white-space: normal;
-transform: scale(1);
 z-index: 1;
 }
 
-        .carousel-fade {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 80px;
-          z-index: 2;
-          pointer-events: none;
-        }
+.carousel-fade {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 80px;
+z-index: 2;
+pointer-events: none;
+}
 
-        .carousel-fade.left {
-          left: 0;
-          background: linear-gradient(to right, white, transparent);
-        }
+.carousel-fade.left {
+left: 0;
+background: linear-gradient(to right, white, transparent);
+}
 
-        .carousel-fade.right {
-          right: 0;
-          background: linear-gradient(to left, white, transparent);
-        }
+.carousel-fade.right {
+right: 0;
+background: linear-gradient(to left, white, transparent);
+}
 
 
-        .carousel-slide p {
-          font-size: 0.9em;
-          line-height: 1.4;
-          margin-top: 0.5em;
-        }
+.carousel-slide p {
+font-size: 0.9em;
+line-height: 1.4;
+margin-top: 0.5em;
+}
 
-        .carousel-slide .icon {
-          font-size: 2.2em;
-          margin-bottom: 0.5em;
-        }
+.carousel-slide .icon {
+font-size: 2.2em;
+margin-bottom: 0.5em;
+}
 
-        .carousel-slide:hover {
-          transform: scale(1.2);
-          z-index: 3;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+.carousel-slide:hover {
+z-index: 3;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
 
-        .carousel-slide.active-slide {
-          z-index: 3;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+.carousel-slide.active-slide {
+z-index: 3;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
 
-        @media (max-width: 768px) {
-          .carousel-slide {
-            flex: 0 0 90%;
-            max-width: 90%;
-          }
-        }
+@media (max-width: 768px) {
+.carousel-slide {
+flex: 0 0 90%;
+max-width: 90%;
+}
+}
 
-          .carousel-slide img {
-            max-height: 220px; /* consistent vertical height */
-            width: auto;        /* maintain aspect ratio */
-            display: block;
-            margin: 0 auto;
-            object-fit: contain;
-            border: 10px solid white;
-          }
+.carousel-slide img {
+max-height: 220px; /* consistent vertical height */
+width: auto;        /* maintain aspect ratio */
+display: block;
+margin: 0 auto;
+object-fit: contain;
+border: 10px solid white;
+}
 
-          .image-wrapper {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1em;
-          }
+.image-wrapper {
+height: 220px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 1em;
+}
 
-          .carousel-slide h3, .carousel-slide p, .carousel-slide ul {
-            margin: 0.5em 0;
-            text-align: center;
-          }
+.carousel-slide h3, .carousel-slide p, .carousel-slide ul {
+margin: 0.5em 0;
+text-align: center;
+}
 
-          .carousel-slide ul {
-            padding-left: 1.2em;
-            text-align: left;
-            font-size: 0.8em !important;
-            margin-top: 0.5em;
-          }
+.carousel-slide ul {
+padding-left: 1.2em;
+text-align: left;
+font-size: 0.8em !important;
+margin-top: 0.5em;
+}
 
 /* --- Awards Carousel --- */
 .award-carousel {
@@ -4213,7 +4265,112 @@ body::before {
   position: absolute;      /* allows free placement */
   top: 5em;                /* adjust to align with polaroid */
   left: 42em;             /* adjust as needed */
-    z-index:-1;
+  z-index:-1;
 
 }
 
+/*Project*/
+.project-header {
+    display: grid;
+    grid-template-columns: 0.3fr auto; /* title takes full space, icon aligns in a fixed column */
+    gap: 0.5em; /* space between title and icon */
+}
+
+.projects-section {
+    text-align: center;
+    padding: 4em 2em;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(96, 96, 97, 0.1);
+    border-radius: 12px;
+    padding: 1em;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.project-details {
+    padding-left: 6em;
+    flex: 1;
+}
+
+.project-title {
+    font-size: 1.4em;
+    margin: 0 0 0.3em;
+}
+
+.project-desc {
+    font-size: 1em;
+    color: rgba(96, 96, 97, 0.8);
+    margin-bottom: 0.8em;
+}
+
+.project-date {
+    font-size: 1em;
+    color: rgba(96, 96, 97, 0.8);
+    margin-bottom: 0.2em;
+}
+
+.project-link {
+    width: 6em;
+    margin-left:0.5em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-bottom: 0.5em;
+    text-decoration: none;
+    color: rgba(96, 96, 97);
+    background: rgba(255, 255, 255);
+    padding: 0.3em 1em;
+    border: 1px solid rgba(96, 96, 97, 0.6); /* clear border */
+    border-radius: 1em;
+    transition: background 0.3s ease;
+    font-size: 0.9em;
+}
+
+.project-link:hover {
+    background: rgba(95, 65, 217, 0.3);
+}
+
+.project-tech {
+    display: flex;
+    gap: 1em;
+    margin-top: auto; /* push tech logos to bottom */
+    align-items: flex-end;
+}
+
+.project-tech i {
+    font-size: 1.3em; /* bigger logos */
+    color: rgba(96, 96, 97, 0.85); /* optional styling */
+    transition: transform 0.2s ease;
+}
+
+.project-tech i:hover {
+    transform: scale(1.2);
+}
