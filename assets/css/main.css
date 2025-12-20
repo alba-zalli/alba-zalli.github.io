@@ -264,8 +264,8 @@ input, select, textarea {
 		align-self: center;
 		text-align: center;
 		flex-wrap: wrap;
-		width: 100%
-		font-size: 3em;;
+		width: 100%;
+		font-size: 3em;
 		font-family: 'Nova Cut', sans-serif;
 	}
 
