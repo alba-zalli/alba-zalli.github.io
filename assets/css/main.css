@@ -4104,7 +4104,7 @@ max-width: 90%;
 }
 
 .carousel-slide img {
-max-height: 220px; /* consistent vertical height */
+max-height: 150px; /* consistent vertical height */
 width: auto;        /* maintain aspect ratio */
 display: block;
 margin: 0 auto;
@@ -4113,7 +4113,7 @@ border: 10px solid white;
 }
 
 .image-wrapper {
-height: 180px;
+height: 220px;
 display: flex;
 align-items: center;
 justify-content: center;
