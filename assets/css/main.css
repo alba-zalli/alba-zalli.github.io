@@ -262,10 +262,10 @@ input, select, textarea {
 
 	h7 {
 		align-self: center;
-		text-align: center;
+		text-align: left;
 		flex-wrap: wrap;
 		width: 100%;
-		font-size: 3em;
+		font-size: 5em;
 		font-family: 'Nova Cut', sans-serif;
 	}
 
@@ -4337,21 +4337,21 @@ body::before {
 }
 
 .project-link {
-    width: 6em;
-    margin-left:0.5em;
     display: inline-flex;
     align-items: center;
     gap: 0.4em;
-    margin-bottom: 0.5em;
+    margin: 0.3em 0.5em 0.5em 0; /* spacing for inline layout */
     text-decoration: none;
     color: rgba(96, 96, 97);
     background: rgba(255, 255, 255);
     padding: 0.3em 1em;
-    border: 1px solid rgba(96, 96, 97, 0.6); /* clear border */
+    border: 1px solid rgba(96, 96, 97, 0.6);
     border-radius: 1em;
     transition: background 0.3s ease;
     font-size: 0.9em;
+    white-space: nowrap; /* prevent wrapping inside button */
 }
+
 
 .project-link:hover {
     background: rgba(95, 65, 217, 0.3);
