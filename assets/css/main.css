@@ -4376,17 +4376,35 @@ body::before {
 }
 
 @media screen and (max-width: 736px) {
-  .header-content {
+  #header .header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+
+  #header .polaroid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #header .title-block {
+    width: 100%;
+    max-width: 34em;
+    margin: 1.5em auto 0 auto;
+    padding: 0 1em;
     text-align: center;
   }
 
-  .title-block {
+  #header h7,
+  #header h8,
+  #header h9 {
     width: 100%;
-    max-width: 32em;
-    margin: 0 auto;
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
+
 
