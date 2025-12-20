@@ -4374,3 +4374,124 @@ body::before {
 .project-tech i:hover {
     transform: scale(1.2);
 }
+
+/* ---------------- RESPONSIVE FIXES (NON-DESTRUCTIVE) ---------------- */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.polaroid-container {
+  flex: 0 1 auto;
+  max-width: 90vw;
+}
+
+.polaroid {
+  width: min(280px, 80vw);
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+}
+
+.title-block {
+  max-width: 520px;
+  padding: 0 1rem;
+}
+
+#header {
+  padding: 3rem 1.5rem;
+}
+
+.project {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-slide {
+  width: min(260px, 80vw);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.award-carousel img {
+  max-height: 80px;
+  width: auto;
+}
+
+h7, h8, h9 {
+  display: block;
+}
+
+h7 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+h8 {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+h9 {
+  font-size: clamp(0.9rem, 2.8vw, 1rem);
+  line-height: 1.6;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .polaroid-container {
+    margin-bottom: 2rem;
+  }
+
+  #nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .carousel-track {
+    gap: 1rem;
+  }
+
+  .accordion {
+    padding: 0 1rem;
+  }
+}
+
+/* ---------------- VERY SMALL PHONES ---------------- */
+@media (max-width: 420px) {
+
+  .polaroid {
+    width: 90vw;
+  }
+
+  .carousel-slide {
+    width: 85vw;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+}
