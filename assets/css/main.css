@@ -4339,13 +4339,8 @@ body::before {
 
 .project-link {
     width: 1.2em;
-	justify-content: center;
 }
 
-
-.project-link:hover {
-    background: rgba(95, 65, 217, 0.3);
-}
 
 .project-tech {
     display: flex;
