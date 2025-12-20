@@ -261,13 +261,10 @@ input, select, textarea {
 	}
 
 	h7 {
-        margin: 0;
-        letter-spacing: -0.025em;
-        font-family: 'Nova Cut', sans-serif;
-        font-size: 5em;
-        line-height: 1;
-        align-self: flex-start;
-        position: relative;
+		align-self: center;
+		text-align: center;
+		flex-wrap: wrap;
+		width: 100%;
 	}
 
 	h8{
