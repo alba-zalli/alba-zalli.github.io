@@ -4338,19 +4338,8 @@ body::before {
 }
 
 .project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    margin: 0.3em 0.5em 0.5em 0; /* spacing for inline layout */
-    text-decoration: none;
-    color: rgba(96, 96, 97);
-    background: rgba(255, 255, 255);
-    padding: 0.3em 1em;
-    border: 1px solid rgba(96, 96, 97, 0.6);
-    border-radius: 1em;
-    transition: background 0.3s ease;
-    font-size: 0.9em;
-    white-space: nowrap; /* prevent wrapping inside button */
+    width: 1.2em;
+	justify-content: center;
 }
 
 
