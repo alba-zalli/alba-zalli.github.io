@@ -265,6 +265,7 @@ input, select, textarea {
 		text-align: center;
 		flex-wrap: wrap;
 		width: 100%;
+		font-family: 'Nova Cut', sans-serif;
 	}
 
 	h8{
