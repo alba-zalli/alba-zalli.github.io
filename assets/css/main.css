@@ -4271,6 +4271,7 @@ body::before {
 
 /*Project*/
 .project-header {
+	flex-wrap: wrap;
     display: grid;
     grid-template-columns: 0.3fr auto; /* title takes full space, icon aligns in a fixed column */
     gap: 0.5em; /* space between title and icon */
@@ -4339,6 +4340,8 @@ body::before {
 
 .project-link {
     width: 1.2em;
+	display: inline-flex;
+    align-items: center;
 }
 
 
